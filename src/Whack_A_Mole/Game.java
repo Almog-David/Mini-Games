@@ -126,6 +126,7 @@ public class Game extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit thr program while pressing X
         setBounds(100, 100, 608, 720); // bounds of the window
 
+        //JPanel contentPane = new JPanel();
         JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(0, 51, 0));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -142,7 +143,7 @@ public class Game extends JFrame{
         panel.setBackground(new Color(0, 102, 0));
         panel.setBounds(32, 105, 535, 546);
         panel.setLayout(null);
-        panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(loadImage("Graphics/hammer.png").getImage(),
+        panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(loadImage("/Whack_A_Mole/Graphics/hammer.png").getImage(),
                 new Point(0,0),"custom cursor1"));
         contentPane.add(panel);
 
@@ -192,7 +193,7 @@ public class Game extends JFrame{
 
     private void clearBoard(){
         for(int i = 0; i < 16; i++){
-            holes[i].setIcon(loadImage("Graphics/moleIn.png"));
+            holes[i].setIcon(loadImage("/Whack_A_Mole/Graphics/moleIn.png"));
             board[i] = 0;
         }
     }
@@ -201,7 +202,7 @@ public class Game extends JFrame{
         Random rnd = new Random(System.currentTimeMillis()); //seeding random with current time
         int moleID = rnd.nextInt(16);
         board[moleID] = 1;
-        holes[moleID].setIcon(loadImage("Graphics/moleOut.png"));
+        holes[moleID].setIcon(loadImage("/Whack_A_Mole/Graphics/moleOut.png"));
     }
 
     private ImageIcon loadImage(String path){
